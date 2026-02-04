@@ -53,3 +53,6 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 /AdventureGame/.vs
+/.vs
+/AdventureGame.core/.vs/AdventureGame.core
+/AdventureGame.core/.vs/ProjectEvaluation

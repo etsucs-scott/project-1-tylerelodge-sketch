@@ -6,13 +6,12 @@ namespace AdventureGame.Core
 {
     public abstract class Item
     {
-        public string Name { get; protected set; }
-        public string PickupMessage { get; protected set; }
+        public string Name { get; }
 
-        protected Item(string name, string message)
+        protected Item(string name)
         {
             Name = name;
-            PickupMessage = message;
         }
     }
 }
+

@@ -8,10 +8,7 @@ namespace AdventureGame.Core
     {
         private const int HealAmount = 20;
 
-        public Potion(string name)
-            : base(name, $"You drink the {name} and restore 20 HP!")
-        {
-        }
+        public Potion() : base("Potion") { }
 
         public void Use(Player player)
         {

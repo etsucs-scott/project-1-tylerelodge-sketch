@@ -11,20 +11,18 @@ namespace AdventureGame.Core
     {
         Empty,
         Wall,
-        Monster,
-        Item,
         Exit
     }
-}
 
-public class Tile
-{
-    public TileType Type { get; set; }
-    public Item Item { get; set; }
-    public Monster Monster { get; set; }
-
-    public Tile(TileType type)
+    public class Tile
     {
-        Type = type;
+        public TileType Type { get; set; }
+        public Monster Monster { get; set; }
+        public Item Item { get; set; }
+
+        public Tile(TileType type)
+        {
+            Type = type;
+        }
     }
 }

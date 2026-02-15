@@ -6,12 +6,11 @@ namespace AdventureGame.Core
 {
     public class Weapon : Item
     {
-        public int AttackModifier { get; }
+        public int Modifier { get; }
 
-        public Weapon(string name, int modifier)
-            : base(name, $"You picked up {name}!")
+        public Weapon(string name, int modifier) : base(name)
         {
-            AttackModifier = modifier;
+            Modifier = modifier;
         }
     }
 }

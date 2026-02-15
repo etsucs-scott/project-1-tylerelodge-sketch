@@ -6,22 +6,22 @@ namespace AdventureGame.Core
 {
     public class Monster : ICharacter
     {
-        private static Random random = new Random();
+        private static Random rand = new Random();
         private const int BaseDamage = 10;
 
         public string Name { get; }
         public int Health { get; private set; }
         public bool IsAlive => Health > 0;
 
-        public Monster(string name)
+        public Monster()
         {
-            Name = name;
-            Health = random.Next(30, 51); // 30–50 HP
+            Name = "Monster";
+            Health = rand.Next(30, 51);
         }
 
         public void Attack(ICharacter target)
         {
-            Console.WriteLine($"{Name} attacks {target.Name} for {BaseDamage} damage!");
+            Console.WriteLine("Monster attacks!");
             target.TakeDamage(BaseDamage);
         }
 
@@ -29,8 +29,7 @@ namespace AdventureGame.Core
         {
             Health -= amount;
             if (Health < 0) Health = 0;
-
-            Console.WriteLine($"{Name} now has {Health} HP.");
+            Console.WriteLine($"Monster HP: {Health}");
         }
     }
 }

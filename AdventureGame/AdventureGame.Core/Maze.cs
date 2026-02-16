@@ -18,7 +18,9 @@ namespace AdventureGame.Core
             Generate();
         }
 
-        private void Generate()
+        private void Generate() 
+            // Makes sure there's always a path from start to exit,
+            // then randomly adds extra empty spaces, monsters, and items
         {
             // Fill entire maze with walls
             for (int r = 0; r < Size; r++)

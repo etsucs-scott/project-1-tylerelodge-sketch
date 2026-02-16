@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36603.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureGame.cli", "AdventureGame.cli\AdventureGame.cli.csproj", "{AAC550DD-3021-4C08-8865-022AB0CAF591}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureGame.Core", "AdventureGame.Core\AdventureGame.Core.csproj", "{A955A4EE-1243-49E6-B247-83A3364FF62E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureGame.Console", "AdventureGame.Console\AdventureGame.Console.csproj", "{F6E6580E-3450-4FBF-B9A0-080DB15D75AD}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AAC550DD-3021-4C08-8865-022AB0CAF591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AAC550DD-3021-4C08-8865-022AB0CAF591}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AAC550DD-3021-4C08-8865-022AB0CAF591}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AAC550DD-3021-4C08-8865-022AB0CAF591}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A955A4EE-1243-49E6-B247-83A3364FF62E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A955A4EE-1243-49E6-B247-83A3364FF62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A955A4EE-1243-49E6-B247-83A3364FF62E}.Release|Any CPU.ActiveCfg = Release|Any CPU

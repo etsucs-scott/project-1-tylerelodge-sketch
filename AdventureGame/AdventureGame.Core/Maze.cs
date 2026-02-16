@@ -20,7 +20,7 @@ namespace AdventureGame.Core
 
         private void Generate()
         {
-            // 1️⃣ Fill entire maze with walls
+            // Fill entire maze with walls
             for (int r = 0; r < Size; r++)
             {
                 for (int c = 0; c < Size; c++)
@@ -29,7 +29,7 @@ namespace AdventureGame.Core
                 }
             }
 
-            // 2️⃣ Carve guaranteed path from (1,1) to exit
+            // Carve guaranteed path from (1,1) to exit
             int row = 1;
             int col = 1;
             grid[row, col].Type = TileType.Empty;
@@ -58,7 +58,7 @@ namespace AdventureGame.Core
             // Place exit
             grid[Size - 2, Size - 2].Type = TileType.Exit;
 
-            // 3️⃣ Randomly carve extra empty spaces
+            // Randomly carve extra empty spaces
             for (int r = 1; r < Size - 1; r++)
             {
                 for (int c = 1; c < Size - 1; c++)
@@ -70,7 +70,7 @@ namespace AdventureGame.Core
                 }
             }
 
-            // 4️⃣ Place monsters & items only on empty tiles
+            // Place monsters & items only on empty tiles
             for (int i = 0; i < Size; i++)
             {
                 int r = rand.Next(1, Size - 1);

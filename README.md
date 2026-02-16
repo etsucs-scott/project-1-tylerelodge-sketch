@@ -1,43 +1,98 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/2QC0Bpz-)
-# CSCI 1260 — Project
+# AdventureGame
 
-## Project Instructions
-All project requirements, grading criteria, and submission details are provided on **D2L**.  
-Refer to D2L as the *authoritative source* for this assignment.
+A console-based 2D maze adventure game written in C#.
 
-This repository is intentionally minimal. You are responsible for:
-- Creating the solution and projects
-- Designing the class structure
-- Implementing the required functionality
+Build & Run Instructions
 
----
+Using Visual Studio
+1. Open the solution file.
+2. Set `AdventureGame.Console` as the Startup Project if not already selected.
+3. Build the solution (Build → Build Solution).
+4. Press F5 or Ctrl+F5 to run.
 
-## Getting Started (CLI)
+Movement Controls
 
-You may use **Visual Studio**, **VS Code**, or the **terminal**.
+- W or Up Arrow → Move Up
+- S or Down Arrow → Move Down
+- A or Left Arrow → Move Left
+- D or Right Arrow → Move Right
 
-### Create a solution
-```bash
-dotnet new sln -n ProjectName
-```
+Invalid moves (walls or off-grid) will display an error message.
 
-### Create a project (example: console app)
-```bash
-dotnet new console -n ProjectName.App
-```
+Display Format
 
-### Add the project to the solution
-```bash
-dotnet sln add ProjectName.App
-```
+Maze Symbols:
 
-### Build and run
-```bash
-dotnet build
-dotnet run --project ProjectName.App
-```
+# = Wall
+. = Empty Space
+@ = Player
+M = Monster
+W = Weapon
+P = Potion
+E = Exit
 
-## Notes
-- Commit early and commit often.
-- Your repository history is part of your submission.
-- Update this README with build/run instructions specific to your project.
+After each move:
+- The console clears
+- The full maze redraws
+- Player HP is displayed
+- Any battle or item results appear above the maze
+
+
+Game Rules
+
+Player Stats
+- Starts with 100 HP
+- Maximum HP is 150
+- Base damage is 10
+
+Monsters
+- Have 30–50 HP
+- Deal 10 damage per attack
+- Do not move
+
+Weapons
+- Added to inventory permanently
+- No size limit
+- Highest modifier applies to attacks
+
+Potions
+- Heal +20 HP
+- Applied immediately
+- Do not remain in inventory
+
+
+Battle System
+
+- Player always attacks first.
+- Damage = 10 + highest weapon modifier.
+- If monster survives, it counterattacks.
+- Battle continues until one reaches 0 HP.
+- No fleeing allowed.
+
+
+Win / Lose Conditions
+
+Win
+Reach the Exit tile (E).
+
+Lose
+Player HP reaches 0.
+
+
+Maze Generation
+
+- Minimum size: 10x10
+- Randomly generated walls, monsters, and items
+- Exit is guaranteed reachable by carving a valid path before random expansion
+
+
+UML Diagram
+
+The UML diagram file includes:
+- All required classes
+- Interface implementation
+- Inheritance
+- Aggregation
+- Composition
+- Dependency
+- Key fields and methods

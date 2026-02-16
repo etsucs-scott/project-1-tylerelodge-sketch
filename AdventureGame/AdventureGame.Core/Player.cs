@@ -14,6 +14,8 @@ namespace AdventureGame.Core
         public int Health { get; private set; }
         public bool IsAlive => Health > 0;
 
+        public object LastDamage { get; internal set; }
+
         private List<Weapon> inventory = new List<Weapon>();
 
         public Player(string name)

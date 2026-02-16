@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureGame.cli", "Advent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureGame.Core", "AdventureGame.Core\AdventureGame.Core.csproj", "{A955A4EE-1243-49E6-B247-83A3364FF62E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventureGame.Console", "AdventureGame.Console\AdventureGame.Console.csproj", "{F6E6580E-3450-4FBF-B9A0-080DB15D75AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A955A4EE-1243-49E6-B247-83A3364FF62E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A955A4EE-1243-49E6-B247-83A3364FF62E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A955A4EE-1243-49E6-B247-83A3364FF62E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E6580E-3450-4FBF-B9A0-080DB15D75AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E6580E-3450-4FBF-B9A0-080DB15D75AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E6580E-3450-4FBF-B9A0-080DB15D75AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E6580E-3450-4FBF-B9A0-080DB15D75AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

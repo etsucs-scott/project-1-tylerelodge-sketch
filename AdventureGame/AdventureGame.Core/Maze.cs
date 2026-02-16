@@ -20,24 +20,57 @@ namespace AdventureGame.Core
 
         private void Generate()
         {
+            // 1️⃣ Fill entire maze with walls
             for (int r = 0; r < Size; r++)
             {
                 for (int c = 0; c < Size; c++)
                 {
-                    if (r == 0 || c == 0 || r == Size - 1 || c == Size - 1)
-                        grid[r, c] = new Tile(TileType.Wall);
-                    else
-                        grid[r, c] = new Tile(rand.NextDouble() < 0.2 ? TileType.Wall : TileType.Empty);
+                    grid[r, c] = new Tile(TileType.Wall);
                 }
             }
 
-            // Ensure starting path clear
-            grid[1, 1].Type = TileType.Empty;
+            // 2️⃣ Carve guaranteed path from (1,1) to exit
+            int row = 1;
+            int col = 1;
+            grid[row, col].Type = TileType.Empty;
 
-            // Exit placement
+            while (row < Size - 2 || col < Size - 2)
+            {
+                if (row < Size - 2 && col < Size - 2)
+                {
+                    if (rand.Next(2) == 0)
+                        row++;
+                    else
+                        col++;
+                }
+                else if (row < Size - 2)
+                {
+                    row++;
+                }
+                else
+                {
+                    col++;
+                }
+
+                grid[row, col].Type = TileType.Empty;
+            }
+
+            // Place exit
             grid[Size - 2, Size - 2].Type = TileType.Exit;
 
-            // Place monsters & items
+            // 3️⃣ Randomly carve extra empty spaces
+            for (int r = 1; r < Size - 1; r++)
+            {
+                for (int c = 1; c < Size - 1; c++)
+                {
+                    if (grid[r, c].Type == TileType.Wall && rand.NextDouble() < 0.35)
+                    {
+                        grid[r, c].Type = TileType.Empty;
+                    }
+                }
+            }
+
+            // 4️⃣ Place monsters & items only on empty tiles
             for (int i = 0; i < Size; i++)
             {
                 int r = rand.Next(1, Size - 1);
@@ -62,29 +95,9 @@ namespace AdventureGame.Core
             return grid[r, c];
         }
 
-        public void Draw(int playerRow, int playerCol)
+        public bool IsInBounds(int r, int c)
         {
-            for (int r = 0; r < Size; r++)
-            {
-                for (int c = 0; c < Size; c++)
-                {
-                    if (r == playerRow && c == playerCol)
-                        Console.Write("@");
-                    else if (grid[r, c].Type == TileType.Wall)
-                        Console.Write("#");
-                    else if (grid[r, c].Monster != null && grid[r, c].Monster.IsAlive)
-                        Console.Write("M");
-                    else if (grid[r, c].Item is Weapon)
-                        Console.Write("W");
-                    else if (grid[r, c].Item is Potion)
-                        Console.Write("P");
-                    else if (grid[r, c].Type == TileType.Exit)
-                        Console.Write("E");
-                    else
-                        Console.Write(".");
-                }
-                Console.WriteLine();
-            }
+            return r >= 0 && r < Size && c >= 0 && c < Size;
         }
     }
 }
